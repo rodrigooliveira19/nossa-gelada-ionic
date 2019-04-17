@@ -4,6 +4,7 @@ import { Estabelecimento } from './model/estabelecimento';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Marca } from './model/marca';
 import { Unidade } from './model/unidade';
+import { Filtro } from './model/filtro';
 
 @Injectable({
   providedIn: 'root'
@@ -110,6 +111,39 @@ export class NossaGeladaApiService {
 
     return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/excluirUnidade/"
       ,unidade,{headers: headers}).toPromise(); 
+  }
+
+  //Filtro
+  
+  getFiltros() {
+    this.auxUrl = this.url + 'filtros/'; 
+
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.get(this.auxUrl,{headers: headers}).toPromise(); 
+
+  }
+
+  cadastrarFiltro(filtro: Filtro) {
+    this.auxUrl = this.url + 'cadastrarFiltro/'; 
+
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.post(this.auxUrl,filtro,{headers: headers}).toPromise(); 
+  }
+
+  atualizarFiltro(filtro: Filtro) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/atualizarFiltro/"
+      ,filtro,{headers: headers}).toPromise(); 
+  }
+
+  excluirFiltro(filtro: Filtro) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/excluirFiltro/"
+      ,filtro,{headers: headers}).toPromise(); 
   }
 
 }

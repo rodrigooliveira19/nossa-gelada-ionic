@@ -30,6 +30,11 @@ export class AppComponent {
       title: 'Unidade',
       url: '/unidade-list',
       icon: 'list'
+    },
+    {
+      title: 'Filtro',
+      url: '/filtro-list',
+      icon: 'list'
     }
   ];
 

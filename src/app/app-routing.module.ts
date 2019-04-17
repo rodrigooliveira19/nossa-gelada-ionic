@@ -37,7 +37,16 @@ const routes: Routes = [
     loadChildren: './unidade-cad/unidade-cad.module#UnidadeCadPageModule' },
 
   { path: 'unidade-list', 
-    loadChildren: './unidade-list/unidade-list.module#UnidadeListPageModule' }
+    loadChildren: './unidade-list/unidade-list.module#UnidadeListPageModule' },
+
+  { path: 'filtro-cad',
+    loadChildren: './filtro-cad/filtro-cad.module#FiltroCadPageModule' },
+
+  { path: 'filtro-cad/:id/:descricao',
+     loadChildren: './filtro-cad/filtro-cad.module#FiltroCadPageModule' },
+
+  { path: 'filtro-list', 
+    loadChildren: './filtro-list/filtro-list.module#FiltroListPageModule' }
 ];
 
 @NgModule({

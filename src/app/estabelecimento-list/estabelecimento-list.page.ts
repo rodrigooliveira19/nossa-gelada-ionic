@@ -43,8 +43,6 @@ export class EstabelecimentoListPage implements OnInit {
     console.log(estabelecimento.id);
     console.log(estabelecimento.descricao); 
     this.navCtrl.navigateForward(['/estabelecimento-cad',id,descricao]); 
-    //this.router.navigate(['/estabelecimento-cad',estabelecimento.id,estabelecimento.descricao]); 
-    //this.navCtrl.navigateForward(['/estabelecimento-cad',estabelecimento.id,estabelecimento.descricao]); 
   }
 
   excluirEstabelecimento(estabelecimento: Estabelecimento) {

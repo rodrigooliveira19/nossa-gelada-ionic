@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Cadastrar Filtro</ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Filtro - Ex:Lata,Latão.</ion-label>
+    <ion-input name="descricao" [(ngModel)]="descricao"></ion-input>
+  </ion-item>
+
+  <br><br><br><br><br><br><br><br><br><br>
+
+  <ion-button expand="full" (click)="cadastrarFiltro()">Salvar</ion-button>
+
+</ion-content>
