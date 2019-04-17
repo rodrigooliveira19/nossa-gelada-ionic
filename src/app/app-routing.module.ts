@@ -28,7 +28,16 @@ const routes: Routes = [
     loadChildren: './marca-cad/marca-cad.module#MarcaCadPageModule' 
   },
   { path: 'marca-list', 
-    loadChildren: './marca-list/marca-list.module#MarcaListPageModule' }
+    loadChildren: './marca-list/marca-list.module#MarcaListPageModule' },
+
+  { path: 'unidade-cad', 
+    loadChildren: './unidade-cad/unidade-cad.module#UnidadeCadPageModule' },
+  
+  { path: 'unidade-cad/:id/:descricao', 
+    loadChildren: './unidade-cad/unidade-cad.module#UnidadeCadPageModule' },
+
+  { path: 'unidade-list', 
+    loadChildren: './unidade-list/unidade-list.module#UnidadeListPageModule' }
 ];
 
 @NgModule({

@@ -1,43 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { NossaGeladaApiService } from '../nossa-gelada-api.service';
-import { Marca } from '../model/marca';
+import { Unidade } from '../model/unidade';
 import { ActivatedRoute } from '@angular/router';
-import { NavController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-marca-cad',
-  templateUrl: './marca-cad.page.html',
-  styleUrls: ['./marca-cad.page.scss'],
+  selector: 'app-unidade-cad',
+  templateUrl: './unidade-cad.page.html',
+  styleUrls: ['./unidade-cad.page.scss'],
 })
-export class MarcaCadPage implements OnInit {
+export class UnidadeCadPage implements OnInit {
 
-  private descricao: string; 
+  private descricao: string;
   private id: string; 
 
   constructor(private apiService: NossaGeladaApiService,
-              private activeRoute: ActivatedRoute,
-              private navCtrl: NavController) { }
+              private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.descricao = this.activeRoute.snapshot.paramMap.get('descricao'); 
     this.id = this.activeRoute.snapshot.paramMap.get('id');
   }
 
-  cadastrarMarca() {
-    let marca = new Marca(this.descricao); 
+  cadastrarUnidade() {
+    let unidade = new Unidade(this.descricao); 
 
     if (this.id == null) {
-      this.apiService.cadastrarMarca(marca)
+      this.apiService.cadastrarUnidade(unidade)
       .then((response)=>{
-        console.log(this.id);
+        console.log(this.descricao);
       })
       .catch((response)=>{
-        console.log(this.id);
+        console.log(this.descricao);
       });  
     }else{
-      marca.id = this.id;  
+      unidade.id = this.id;  
 
-      this.apiService.atualizarMarca(marca)
+      this.apiService.atualizarUnidade(unidade)
       .then((response)=>{
         console.log('Funcionou, Atualizando');
       })

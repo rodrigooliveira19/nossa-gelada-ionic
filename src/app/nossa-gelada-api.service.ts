@@ -3,6 +3,7 @@ import { Estabelecimento } from './model/estabelecimento';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Marca } from './model/marca';
+import { Unidade } from './model/unidade';
 
 @Injectable({
   providedIn: 'root'
@@ -76,6 +77,39 @@ export class NossaGeladaApiService {
 
     return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/excluirMarca/"
       ,marca,{headers: headers}).toPromise(); 
+  }
+
+  //Unidade
+  
+  getUnidades() {
+    this.auxUrl = this.url + 'unidades/'; 
+
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.get(this.auxUrl,{headers: headers}).toPromise(); 
+
+  }
+
+  cadastrarUnidade(unidade: Unidade) {
+    this.auxUrl = this.url + 'cadastrarUnidade/'; 
+
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.post(this.auxUrl,unidade,{headers: headers}).toPromise(); 
+  }
+
+  atualizarUnidade(unidade: Unidade) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/atualizarUnidade/"
+      ,unidade,{headers: headers}).toPromise(); 
+  }
+
+  excluirUnidade(unidade: Unidade) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/excluirUnidade/"
+      ,unidade,{headers: headers}).toPromise(); 
   }
 
 }
