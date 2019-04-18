@@ -35,7 +35,13 @@ export class AppComponent {
       title: 'Filtro',
       url: '/filtro-list',
       icon: 'list'
+    },
+    {
+      title: 'Cesta',
+      url: '/cesta-cad',
+      icon: 'list'
     }
+
   ];
 
   constructor(

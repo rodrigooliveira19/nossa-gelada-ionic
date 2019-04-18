@@ -46,7 +46,10 @@ const routes: Routes = [
      loadChildren: './filtro-cad/filtro-cad.module#FiltroCadPageModule' },
 
   { path: 'filtro-list', 
-    loadChildren: './filtro-list/filtro-list.module#FiltroListPageModule' }
+    loadChildren: './filtro-list/filtro-list.module#FiltroListPageModule' },
+
+  { path: 'cesta-cad', 
+    loadChildren: './cesta-cad/cesta-cad.module#CestaCadPageModule' }
 ];
 
 @NgModule({
