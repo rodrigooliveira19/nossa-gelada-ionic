@@ -1,7 +1,6 @@
 export class ItemCesta {
 
-    public id: string; 
-    public estabelecimentoDesc: string;
+    public id: number; 
     public marcaDesc: string;
     public unidadeoDesc: string;
     public filtroDesc: string;

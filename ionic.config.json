@@ -1,5 +1,7 @@
 {
   "name": "nossa-gelada",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
