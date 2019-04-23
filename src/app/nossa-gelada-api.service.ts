@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Marca } from './model/marca';
 import { Unidade } from './model/unidade';
 import { Filtro } from './model/filtro';
+import { Cesta } from './model/cesta';
+import { ItemCesta } from './model/itemcesta';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,8 @@ export class NossaGeladaApiService {
 
     let headers = new HttpHeaders({'Content-Type':'application/json'});
 
-    return this.http.get(this.auxUrl,{headers: headers}).toPromise(); 
+    return this.http.get('http://127.0.0.1:8000/api_rest/estabelecimentos/'
+      ,{headers: headers}).toPromise(); 
 
   }
 
@@ -144,6 +147,74 @@ export class NossaGeladaApiService {
 
     return this.http.post("http://rodrigooliveira19.pythonanywhere.com/api_rest/excluirFiltro/"
       ,filtro,{headers: headers}).toPromise(); 
+  }
+
+
+  //Cestas
+
+  getCestas() {
+    
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.get("http://127.0.0.1:8000/api_rest/cestas/"
+      ,{headers: headers}).toPromise(); 
+
+  }
+
+  cadastrarCesta(cesta: Cesta) {
+
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.post("http://127.0.0.1:8000/api_rest/cadastrarCesta/",
+      cesta,{headers: headers}).toPromise(); 
+  }
+
+  atualizarCesta(cesta: Cesta) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://127.0.0.1:8000/api_rest/atualizarCesta/"
+      ,cesta,{headers: headers}).toPromise(); 
+  }
+
+  excluirCesta(cesta: Cesta) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://127.0.0.1:8000/api_rest/excluirCesta/"
+      ,cesta,{headers: headers}).toPromise(); 
+  }
+
+
+  //Item
+  
+  getItens() {
+    
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.get("http://127.0.0.1:8000/api_rest/cestas/"
+      ,{headers: headers}).toPromise(); 
+
+  }
+
+  cadastrarItem(item: ItemCesta) {
+
+    let headers = new HttpHeaders({'Content-Type':'application/json'});
+
+    return this.http.post("http://127.0.0.1:8000/api_rest/cadastrarItem/",
+      item,{headers: headers}).toPromise(); 
+  }
+
+  atualizarItem(item: ItemCesta) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://127.0.0.1:8000/api_rest/atualizarCesta/"
+      ,item,{headers: headers}).toPromise(); 
+  }
+
+  excluirCestItem(item: ItemCesta) {
+    let headers = new HttpHeaders({'Content-Type':'application/json'}); 
+
+    return this.http.post("http://127.0.0.1:8000/api_rest/excluirCesta/"
+      ,item,{headers: headers}).toPromise(); 
   }
 
 }

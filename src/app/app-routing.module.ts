@@ -49,7 +49,19 @@ const routes: Routes = [
     loadChildren: './filtro-list/filtro-list.module#FiltroListPageModule' },
 
   { path: 'cesta-cad', 
-    loadChildren: './cesta-cad/cesta-cad.module#CestaCadPageModule' }
+    loadChildren: './cesta-cad/cesta-cad.module#CestaCadPageModule' },
+
+  { path: 'cesta-cad/:id/:descricao/:estabelecimento', 
+    loadChildren: './cesta-cad/cesta-cad.module#CestaCadPageModule' },
+
+  { path: 'cesta-list', 
+    loadChildren: './cesta-list/cesta-list.module#CestaListPageModule' },
+
+  { path: 'item-cad', 
+    loadChildren: './item-cad/item-cad.module#ItemCadPageModule' },
+
+  { path: 'item-cad/:id/:descricao/:estabelecimento', 
+    loadChildren: './item-cad/item-cad.module#ItemCadPageModule' }
 ];
 
 @NgModule({

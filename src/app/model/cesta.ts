@@ -1,9 +1,9 @@
 import { ItemCesta } from './itemcesta';
 export class Cesta {
 
-    public id: number; 
+    public id: string; 
     public descricao: string; 
-    public estabelecimentoDesc: string; 
+    public estabelecimento: string; 
 
     public itemCesta: ItemCesta[]; 
 }

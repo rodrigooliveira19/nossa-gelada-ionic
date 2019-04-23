@@ -1,3 +1,4 @@
+import { HomePage } from './home/home.page';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -10,6 +11,9 @@ import { DatabaseService } from './database.service';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+
+  private rootPage: any = null; 
+
   public appPages = [
     {
       title: 'Home',
@@ -39,7 +43,12 @@ export class AppComponent {
     },
     {
       title: 'Cesta',
-      url: '/cesta-cad',
+      url: '/cesta-list',
+      icon: 'list'
+    },
+    {
+      title: 'Item-cad',
+      url: '/item-cad',
       icon: 'list'
     }
 
@@ -58,9 +67,26 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
+     /*
       this.database.createDatabase()
-      .then(()=>console.log('banco criado com sucesso'))
-      .catch(()=>console.log('Erro ao criar banco')); 
+        .then((e) => {
+          // fechando a SplashScreen somente quando o banco for criado
+          this.openHomePage(this.splashScreen);
+        })
+        .catch(() => {
+          // ou se houver erro na criação do banco
+          this.openHomePage(this.splashScreen);
+        });
+        */
+
     });
+  }
+
+ 
+  private openHomePage(splashScreen: SplashScreen) {
+    this.splashScreen.hide();
+    this.rootPage = HomePage; 
+
   }
 }

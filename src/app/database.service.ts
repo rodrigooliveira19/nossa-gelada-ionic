@@ -8,21 +8,23 @@ export class DatabaseService {
 
   constructor(private sqlite: SQLite) { }
 
+ /*
   public getDB() {
     return this.sqlite.create({
       name:'nossagelada.db', 
       location:'default'
     }); 
-
   }
 
   public createDatabase() {
     return this.getDB()
-    .then((db:SQLiteObject)=>{
-      this.createTables(db); 
+    .then((db: SQLiteObject)=>{
+      this.createTables(db)
     })
-    .catch(e=>console.error(e)); 
+    .catch(e =>console.error(e)); 
   }
+
+ 
 
   private createTables(db:SQLiteObject) {
     db.sqlBatch([
@@ -33,4 +35,25 @@ export class DatabaseService {
     .then(()=>console.log('Tabelas criadas'))
     .catch(e=>console.error('Erro ao criar tabelas',e)); 
   }
+
+  */
+
+ public createDatabase() {
+  this.sqlite.create({
+    name: 'data.db',
+    location: 'default'
+  })
+    .then((db: SQLiteObject) => {
+  
+  
+       db.executeSql('create table danceMoves(name VARCHAR(32))', [])
+        .then(() => console.log('Executed SQL'))
+        .catch(e => console.log(e));
+  
+  
+    })
+    .catch(e => console.log(e));
+ }
+
+ 
 }

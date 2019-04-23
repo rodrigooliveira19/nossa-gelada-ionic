@@ -14,6 +14,7 @@ import {SQLite} from '@ionic-native/sqlite/ngx'
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 import { from } from 'rxjs';
+import { DatabaseService } from './database.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { from } from 'rxjs';
     {provide: LOCALE_ID,useValue:'pt-BR'}, 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     SQLite, 
+    DatabaseService
   ],
   bootstrap: [AppComponent]
 })

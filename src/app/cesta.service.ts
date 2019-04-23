@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DatabaseService } from './database.service';
+import { Cesta } from './model/cesta';
+import { SQLiteObject } from '@ionic-native/sqlite/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +10,8 @@ export class CestaService {
 
   constructor(private database: DatabaseService) { }
 
-
-  public insert(cesta: Cesta) {
+/*
+  public insert(cesta: Cesta) : any{
     return this.database.getDB()
     .then((db: SQLiteObject)=>{
       let  sql = 'insert into cesta(descricao,estabelecimento_desc) values (?,?)';
@@ -20,7 +22,7 @@ export class CestaService {
     .catch((e)=>console.error(e)); 
   }
 
-  public update(cesta: Cesta) {
+  public update(cesta: Cesta): any {
     return this.database.getDB()
     .then((db: SQLiteObject)=>{
       let  sql = 'update cesta set descricao = ?, estabelecimento_desc = ?  where id = ? ';
@@ -31,18 +33,18 @@ export class CestaService {
     .catch((e)=>console.error(e)); 
   }
 
-  public delete(id: number) {
+  public delete(id: number): any {
     return this.database.getDB()
     .then((db: SQLiteObject)=>{
       let  sql = 'delete from cesta where id = ? ';
-      let data = [cesta.id]; 
+      let data = [id]; 
 
       return db.executeSql(sql,data).catch((e)=>console.error(e)); 
     })
     .catch((e)=>console.error(e)); 
   }
 
-  public getAll() {
+  public getAll() : any{
     return this.database.getDB()
     .then((db: SQLiteObject)=>{
       let  sql = 'select * from cesta ';
@@ -72,5 +74,5 @@ export class CestaService {
     .catch((e)=>console.error(e)); 
   }
 
-
+*/
 }
