@@ -5,5 +5,5 @@ export class Cesta {
     public descricao: string; 
     public estabelecimento: string; 
 
-    public itemCesta: ItemCesta[]; 
+    public itens: ItemCesta[]; 
 }

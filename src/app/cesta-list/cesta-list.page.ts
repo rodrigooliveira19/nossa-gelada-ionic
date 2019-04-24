@@ -52,4 +52,8 @@ export class CestaListPage implements OnInit {
     }); 
   }
 
+  listarItens(cesta: Cesta) {
+    this.navCtrl.navigateForward(['/item-list',cesta.id,cesta.descricao,cesta.estabelecimento]);
+  }
+
 }

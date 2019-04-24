@@ -57,7 +57,7 @@ export class NossaGeladaApiService {
 
     let headers = new HttpHeaders({'Content-Type':'application/json'});
 
-    return this.http.get(this.auxUrl,{headers: headers}).toPromise(); 
+    return this.http.get('http://127.0.0.1:8000/api_rest/marcas/',{headers: headers}).toPromise(); 
 
   }
 
@@ -66,7 +66,7 @@ export class NossaGeladaApiService {
 
     let headers = new HttpHeaders({'Content-Type':'application/json'});
 
-    return this.http.post(this.auxUrl,marca,{headers: headers}).toPromise(); 
+    return this.http.post('http://127.0.0.1:8000/api_rest/marcas/',marca,{headers: headers}).toPromise(); 
   }
 
   atualizarMarca(marca: Marca) {
@@ -90,7 +90,7 @@ export class NossaGeladaApiService {
 
     let headers = new HttpHeaders({'Content-Type':'application/json'});
 
-    return this.http.get(this.auxUrl,{headers: headers}).toPromise(); 
+    return this.http.get('http://127.0.0.1:8000/api_rest/unidades/',{headers: headers}).toPromise(); 
 
   }
 
@@ -123,7 +123,7 @@ export class NossaGeladaApiService {
 
     let headers = new HttpHeaders({'Content-Type':'application/json'});
 
-    return this.http.get(this.auxUrl,{headers: headers}).toPromise(); 
+    return this.http.get('http://127.0.0.1:8000/api_rest/filtros/',{headers: headers}).toPromise(); 
 
   }
 

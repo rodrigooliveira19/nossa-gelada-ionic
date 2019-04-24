@@ -45,6 +45,7 @@ export class ItemCadPage implements OnInit {
     this.apiService.getMarcas()
     .then((respose)=>{
       this.marcas = JSON.parse(JSON.stringify(respose)); 
+      console.log('Entrei aqqqqqqqqqqqqqqqqqqqq');
     })
     .catch((response)=>{
       console.log(response.toString()); 

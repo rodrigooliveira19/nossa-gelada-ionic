@@ -24,27 +24,27 @@ export class AppComponent {
     {
       title: 'Estabelecimento',
       url: '/estabelecimento-list',
-      icon: 'list'
+      icon: 'card'
     },
     {
       title: 'Marca',
       url: '/marca-list',
-      icon: 'list'
+      icon: 'beer'
     },
     {
       title: 'Unidade',
       url: '/unidade-list',
-      icon: 'list'
+      icon: 'information'
     },
     {
       title: 'Filtro',
       url: '/filtro-list',
-      icon: 'list'
+      icon: 'md-funnel'
     },
     {
       title: 'Cesta',
       url: '/cesta-list',
-      icon: 'list'
+      icon: 'cart'
     },
     {
       title: 'Item-cad',

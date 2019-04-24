@@ -10,35 +10,35 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{descricao}}</ion-card-title>
+      <ion-card-title><strong>{{descricao}}</strong></ion-card-title>
       <ion-card-subtitle>{{estabelecimento}}</ion-card-subtitle>
     </ion-card-header>
   </ion-card>
 
   <ion-list>
     <ion-item>
-      <ion-label>Marca</ion-label>
+      <ion-label><strong>Marca</strong></ion-label>
       <ion-select placeholder="Selecione" [(ngModel)]="marca">
         <ion-select-option *ngFor="let marca of marcas" value="{{marca.descricao}}">
           {{marca.descricao}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Unidade</ion-label>
+      <ion-label><strong>Unidade</strong></ion-label>
       <ion-select placeholder="Selecione" [(ngModel)]="unidade">
         <ion-select-option *ngFor="let unidade of unidades" value="{{unidade.descricao}}">
           {{unidade.descricao}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Filtro</ion-label>
+      <ion-label><strong>Filtro</strong></ion-label>
       <ion-select placeholder="Selecione" [(ngModel)]="filtro">
         <ion-select-option *ngFor="let filtro of filtros" value="{{filtro.descricao}}">
           {{filtro.descricao}}</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-        <ion-label position="floating">Valor</ion-label>
+        <ion-label position="floating"><strong>Valor R$:</strong></ion-label>
         <ion-input type= "number" name="valor" [(ngModel)]="valor"></ion-input>
       </ion-item>
   </ion-list>

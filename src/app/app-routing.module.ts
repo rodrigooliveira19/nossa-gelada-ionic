@@ -61,7 +61,10 @@ const routes: Routes = [
     loadChildren: './item-cad/item-cad.module#ItemCadPageModule' },
 
   { path: 'item-cad/:id/:descricao/:estabelecimento', 
-    loadChildren: './item-cad/item-cad.module#ItemCadPageModule' }
+    loadChildren: './item-cad/item-cad.module#ItemCadPageModule' },
+
+  { path: 'item-list/:id/:descricao/:estabelecimento', 
+    loadChildren: './item-list/item-list.module#ItemListPageModule' }
 ];
 
 @NgModule({
